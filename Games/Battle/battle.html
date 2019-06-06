@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <title>Flash Notes-Battle</title>
+  <script src="battle.js"></script>
+  <script src="battle.js"></script>
+
+  <style>
+    table{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+</head>
+
+<body align="center" onload="off()">
+  <h1>Battle</h1>
+
+  <table class="images">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <table class="attacks">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <table class="chose">
+    <tr>
+      <td><button id="c1" onclick="chose(1)">One</button></td>
+      <td><button id="c2" onclick="chose(2)">Two</button></td>
+    </tr>
+  </table>
+
+  <p id="message">Chose a fighter to begin.</p>
+
+  <table align="center">
+    <tr>
+      <th>Player Score</th>
+    </tr>
+    <tr>
+      <td id="pscore">0</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

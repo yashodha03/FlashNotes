@@ -1,0 +1,136 @@
+<html>
+
+<head>
+  <title>Flash Notes-Hangman</title>
+  <script src="words.js"></script>
+  <script src="hangman.js"></script>
+
+  <style>
+    img.special {
+      height: 225px;
+    }
+    img.hide {
+      visibility: hidden;
+      height: 6px;
+    }
+    img.nohide {
+      visibility: visible;
+      height: 6px;
+    }
+    td.hide {
+      visibility: hidden;
+    }
+    td.nohide {
+      visibility: visible;
+    }
+    td, th {
+      text-align: center;
+    }
+    button.a {
+      font-size: 17px;
+      height: 35px;
+      width: 35px;
+    }
+    button.b {
+      font-size: 17px;
+      width: 125px;
+    }
+    table.options {
+      border-spacing: 25px;
+    }
+  </style>
+
+</head>
+
+<body align="center" onload="off()">
+  <h1>Hangman</h1>
+  <table align="center" class="options">
+    <tr>
+      <td><image id="man" class="special" src="0.jpg"></image</td>
+      <td><table>
+        <tr>
+          <td><button class="a" id="l1" onclick="chosen('a', 1)">a</button></td>
+          <td><button class="a" id="l2" onclick="chosen('b', 2)">b</button></td>
+          <td><button class="a" id="l3" onclick="chosen('c', 3)">c</button></td>
+          <td><button class="a" id="l4" onclick="chosen('d', 4)">d</button></td>
+          <td><button class="a" id="l5" onclick="chosen('e', 5)">e</button></td>
+        </tr>
+        <tr>
+          <td><button class="a" id="l6" onclick="chosen('f', 6)">f</button></td>
+          <td><button class="a" id="l7" onclick="chosen('g', 7)">g</button></td>
+          <td><button class="a" id="l8" onclick="chosen('h', 8)">h</button></td>
+          <td><button class="a" id="l9" onclick="chosen('i', 9)">i</button></td>
+          <td><button class="a" id="l10" onclick="chosen('j', 10)">j</button></td>
+        </tr>
+        <tr>
+          <td><button class="a" id="l11" onclick="chosen('k', 11)">k</button></td>
+          <td><button class="a" id="l12" onclick="chosen('l', 12)">l</button></td>
+          <td><button class="a" id="l13" onclick="chosen('m', 13)">m</button></td>
+          <td><button class="a" id="l14" onclick="chosen('n', 14)">n</button></td>
+          <td><button class="a" id="l15" onclick="chosen('o', 15)">o</button></td>
+        </tr>
+        <tr>
+          <td><button class="a" id="l16" onclick="chosen('p', 16)">p</button></td>
+          <td><button class="a" id="l17" onclick="chosen('q', 17)">q</button></td>
+          <td><button class="a" id="l18" onclick="chosen('r', 18)">r</button></td>
+          <td><button class="a" id="l19" onclick="chosen('s', 19)">s</button></td>
+          <td><button class="a" id="l20" onclick="chosen('t', 20)">t</button></td>
+        </tr>
+        <tr>
+          <td><button class="a" id="l21" onclick="chosen('u', 21)">u</button></td>
+          <td><button class="a" id="l22" onclick="chosen('v', 22)">v</button></td>
+          <td><button class="a" id="l23" onclick="chosen('w', 23)">w</button></td>
+          <td><button class="a" id="l24" onclick="chosen('x', 24)">x</button></td>
+          <td><button class="a" id="l25" onclick="chosen('y', 25)">y</button></td>
+        </tr>
+        <tr>
+          <td><button class="a" id="l26" onclick="chosen('z', 26)">z</button></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+  <table align="center">
+    <tr>
+      <td id="1t"></td>
+      <td id="2t"></td>
+      <td id="3t"></td>
+      <td id="4t"></td>
+      <td id="5t"></td>
+      <td id="6t"></td>
+      <td id="7t"></td>
+      <td id="8t"></td>
+      <td id="9t"></td>
+      <td id="10t"></td>
+      <td id="11t"></td>
+      <td id="12t"></td>
+    </tr>
+    <tr>
+      <td><image class="hide" id="1"></image></td>
+      <td><image class="hide" id="2"></image></td>
+      <td><image class="hide" id="3"></image></td>
+      <td><image class="hide" id="4"></image></td>
+      <td><image class="hide" id="5"></image></td>
+      <td><image class="hide" id="6"></image></td>
+      <td><image class="hide" id="7"></image></td>
+      <td><image class="hide" id="8"></image></td>
+      <td><image class="hide" id="9"></image></td>
+      <td><image class="hide" id="10"></image></td>
+      <td><image class="hide" id="11"></image></td>
+      <td><image class="hide"id="12"></image></td>
+    </tr>
+  </table>
+
+  <br><button id="newgame" onclick="newgame()" class="b" >New Game</button></br>
+  <p id="message"></p>
+  <table align="center">
+    <tr>
+      <th>Player Score</th>
+    </tr>
+    <tr>
+      <td id="pscore">0</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<html>
+
+<head>
+<title>Flash Notes-Blackjack</title>
+<script src="blackjack.js"></script>
+<style>
+  img {
+    height: 100px;
+  }
+  [src="red_back.png"] {
+    visibility: hidden;
+  }
+  body {
+    background-image: url("table.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 6%;
+    background-size: 525px;
+  }
+  p.t1 {
+    padding : 9px;
+  }
+  p.t2 {
+    padding : 0px;
+  }
+  td, th {
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div align="center" class="background">
+  <h1>Blackjack</h1>
+  <table>
+    <tr>
+      <td><image id="firstdc"></image></td>
+      <td><image id="seconddc"></image></td>
+      <td><image id="thirddc"></image></td>
+      <td><image id="fourthdc"></image></td>
+      <td><image id="fifthdc"></image></td>
+    </tr>
+  </table>
+    <p id="space" class="t1"></p>
+  <table>
+    <tr>
+      <td><image id="firstpc"></image></td>
+      <td><image id="secondpc"></image></td>
+      <td><image id="thirdpc"></image></td>
+      <td><image id="fourthpc"></image></td>
+      <td><image id="fifthpc"></image></td>
+    </tr>
+  </table>
+
+  <br></br>
+  <button id="newgame" onclick="newgame()">New Game</button>
+  <button id="hit" onclick="hit()" disabled="true">Hit</button>
+  <button id="stand" onclick="stand()" disabled="true">Stand</button>
+
+  <br></br>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th>Dealer</th>
+    </tr>
+    <tr>
+      <td id="ps">0</td>
+      <td id="ds">0</td>
+    </tr>
+  </table>
+
+  </div>
+
+</body>
+
+</html>
