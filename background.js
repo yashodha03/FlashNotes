@@ -1,6 +1,6 @@
 var on = false;
 var set = true
-var newURL = "https://18edir.github.io/edr48.github.io/auth/authentication.html";
+var newURL = "https://flashnotes-test.firebaseapp.com";
 
 function updatebadge()
 {
@@ -21,7 +21,7 @@ function popup()
   if(on == true)
   {
     chrome.tabs.create({url:newURL});
-    var timer = setTimeout(popdown, 3000);
+    var timer = setTimeout(popdown, 20000);
   }
 }
 
@@ -32,7 +32,16 @@ function popdown()
   chrome.windows.getAll({populate:true},function(windows){
     windows.forEach(function(window){
       window.tabs.forEach(function(tab){
-        if (tab.url == "https://18edir.github.io/edr48.github.io/auth/authentication.html");
+        if (tab.url == "https://flashnotes-test.firebaseapp.com/" ||
+          tab.url == "https://flashnotes-test.firebaseapp.com/?mode=select" ||
+          tab.url == "https://flashnotes-test.firebaseapp.com/interface/homepage.html" ||
+          tab.url == "https://www.accountchooser.com/redirect.html#flashnotes-test.firebaseapp.com" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/BlackJack/blackjack.html?" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/Tetris/Tetris.html?" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/Dodge/dodge.html?" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/Hangman/hangman.html?" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/Tic-Tac-Toe/TicTacToeIAI.html?" ||
+          tab.url == "https://18edir.github.io/flashnotes/Games/VirtualPet/main.html?")
         {
           all = tab.id;
         }
