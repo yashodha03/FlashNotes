@@ -1,0 +1,30 @@
+<html>
+  <head>
+  </head>
+
+  <body onload="chose()">
+  <script>
+  function chose()
+  {
+      var call = Math.round(Math.random() * 1);
+      var name = document.getElementById("generate");
+      if (call == 0)
+      {
+        name.action = "https://18edir.github.io/edr48.github.io/GamesGit/BlackJack/blackjack.html";
+      }
+      if (call == 1)
+      {
+        name.action = "https://18edir.github.io/edr48.github.io/GamesGit/Tetris/Tetris.html";
+      }
+      name.submit();
+    }
+
+  </script>
+
+  <form align="center" id="generate">
+  <button onclick="submit"> Play </button>
+  </form>
+
+  </body>
+
+</html>
