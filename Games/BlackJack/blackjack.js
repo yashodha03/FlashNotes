@@ -20,6 +20,12 @@ var playerace = 0;
 var dealerace = 0;
 var ps = 0;
 var ds = 0;
+var pa1 = true;
+var da1 = true;
+var pa21 = true;
+var da21 = true;
+var pa22 = false;
+var da22 = false;
 
 function shuffle() {
     var end = deck.length;
@@ -75,6 +81,74 @@ function calc(string, character)
   else
   {
     return parseInt(string);
+  }
+}
+
+function aces()
+{
+  if(playerace == 1)
+  {
+    if(pa1 == true)
+    {
+      if(playertotal > 21)
+      {
+        playertotal -= 10;
+        pa1 = false;
+        pa21 = false;
+      }
+    }
+  }
+  else if(playerace == 2)
+  {
+    if(pa22 == true)
+    {
+      if(playertotal > 21)
+      {
+        playertotal -= 10;
+        pa22 = false;
+      }
+    }
+    if(pa21 == true)
+    {
+      if(playertotal > 21)
+      {
+        playertotal -= 10;
+        pa21 = false;
+        pa22 = true;
+      }
+    }
+  }
+  if(dealerace == 1)
+  {
+    if(da1 == true)
+    {
+      if(dealertotal > 21)
+      {
+        dealertotal -= 10;
+        da1 = false;
+        da21 = false;
+      }
+    }
+  }
+  else if(dealerace == 2)
+  {
+    if(da22 == true)
+    {
+      if(dealertotal > 21)
+      {
+        dealertotal -= 10;
+        da22 = false;
+      }
+    }
+    if(da21 == true)
+    {
+      if(dealertotal > 21)
+      {
+        dealertotal -= 10;
+        da22 = true;
+        da21 = false;
+      }
+    }
   }
 }
 
@@ -160,6 +234,12 @@ function newgame()
   count = 0;
   playerace = 0;
   dealerace = 0;
+  pa1 = true;
+  da1 = true;
+  pa21 = true;
+  da21 = true;
+  pa22 = false;
+  da22 = false;
   shuffle();
   deal();
   document.getElementById("newgame").disabled = true;
@@ -170,42 +250,8 @@ function newgame()
 
 function check()
 {
-  if(playerace == 1)
-  {
-    if(playertotal > 21)
-    {
-      playertotal -= 10;
-    }
-  }
-  else if(playerace == 2)
-  {
-    if(playertotal > 21)
-    {
-      playertotal -= 11;
-    }
-    if(playertotal > 21)
-    {
-      playertotal -= 10;
-    }
-  }
-  if(dealerace == 1)
-  {
-    if(dealertotal > 21)
-    {
-      dealertotal -= 10;
-    }
-  }
-  else if(dealerace == 2)
-  {
-    if(dealertotal > 21)
-    {
-      dealertotal -= 11;
-    }
-    if(dealertotal > 21)
-    {
-      dealertotal -= 10;
-    }
-  }
+  console.log("player", playertotal);
+  console.log("dealer", dealertotal);
   if((playertotal > 21) || (dealertotal == 21))
   {
     document.getElementById("space").className = "t2"
@@ -283,6 +329,7 @@ function stand()
       document.getElementById("fourthdc").src == images(8)
     }
     dealertotal += calc(deck[8], "dealer");
+    aces();
     check();
     count += 1;
     stand();
@@ -302,6 +349,7 @@ function stand()
       document.getElementById("thirddc").src = images(7);
     }
     dealertotal += calc(deck[7], "dealer");
+    aces();
     check();
     count += 1;
     stand();
@@ -321,6 +369,7 @@ function stand()
       document.getElementById("thirddc").src = images(6);
     }
     dealertotal += calc(deck[6], "dealer");
+    aces();
     check();
     count += 1;
     stand();
@@ -336,6 +385,7 @@ function stand()
       document.getElementById("thirddc").src = images(5);
     }
     dealertotal += calc(deck[5], "dealer");
+    aces();
     check();
     count += 1;
     stand();
@@ -344,6 +394,7 @@ function stand()
   {
     document.getElementById("thirddc").src = images(4);
     dealertotal += calc(deck[4], "dealer");
+    aces();
     check();
     count += 1;
     stand();
@@ -356,6 +407,7 @@ function hit()
   {
     document.getElementById("fifthpc").src = images(6);
     playertotal += calc(deck[6], "player");
+    aces();
     check();
     count += 1;
   }
@@ -363,6 +415,7 @@ function hit()
   {
     document.getElementById("fourthpc").src = images(5);
     playertotal += calc(deck[5], "player");
+    aces();
     check();
     count += 1;
   }
@@ -370,6 +423,7 @@ function hit()
   {
     document.getElementById("thirdpc").src = images(4);
     playertotal += calc(deck[4], "player");
+    aces();
     check();
     count += 1;
   }
