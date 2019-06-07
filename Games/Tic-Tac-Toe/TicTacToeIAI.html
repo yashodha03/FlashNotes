@@ -2,10 +2,10 @@
 <!--File: Tic Tac Toe game - AI version
     Author: created by Erin Santos-->
 <style>
-     body {text-align: center; background-color: #000000; color:#74f369; text-shadow: 0 0 10px rgb(23, 244, 5); font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}  
+     body {text-align: center; background-color: #000000; color:#74f369; text-shadow: 0 0 10px rgb(23, 244, 5); font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif}
     table.center, td {
         /*CSS for table*/
-        margin-left:auto; 
+        margin-left:auto;
         margin-right:auto;
         height: 30%;
         width: 30%;
@@ -63,7 +63,8 @@
     <p>How to play: to make a move, click on a box. Get three in a row to win.</p>
 
     <script>
-        
+
+        /*        timer disabled
         //Sets timeout for 30 seconds - after timeout will be redirected to the end page
         var timer = setTimeout(close,30000);
 
@@ -71,6 +72,7 @@
             //Function to redirect user to the endpage
             window.location.href = "https://18edir.github.io/edr48.github.io/interface/interface/endpage.html";
         }
+*/
 
         function reset(){
             //Reset function - clears button values and sets disabled to false
@@ -118,13 +120,13 @@
             b9.disabled = true;
         }
 
-        function win(player){ 
+        function win(player){
             // Function to decide winner and alert users
             buttonDisable() //Disables buttons
 
             if (player == "X"){ // if player one is the winner, alert called
                 alert("X wins!");
-            } 
+            }
             else if (player == "O"){ // if computer is the winner, alert called
                 alert("O wins!");
             }
@@ -174,7 +176,7 @@
                 win("XO")
             }
         }
-        
+
         function compMove(){
             //Move function for computer - uses conditionals to check if a move was already made for each button, calls winCheck to check if there is a winner
             var compChar = "O";
@@ -276,7 +278,7 @@
         }
 
         function move(buttonNum){
-            //Move function for user - chosen button's value will be set to X, calls winCheck to check if there is a winner, 
+            //Move function for user - chosen button's value will be set to X, calls winCheck to check if there is a winner,
             //if no winner calls compMove() so the computer can make a move
             if (buttonNum == b1){
                 var button = document.getElementById("b1");
